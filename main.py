@@ -1,8 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-Optimized Python script:
-
-```python
 
 
 class WebScraper:
@@ -85,39 +82,27 @@ def main():
 
     scraper = WebScraper(url)
     soup = scraper.scrape_website()
-
     if soup is None:
         return
 
     parser = DataParser()
+    analyzer = DataAnalyzer()
+    decision_maker = DecisionMaker()
+    automator = TradingAutomator()
+    dashboard_creator = DashboardCreator()
+    api_integrator = APIIntegrator()
+    notifications_configurator = NotificationsConfigurator()
+
     scraped_data = soup.find_all('div', class_='data')
     parsed_data = parser.parse_data([item.text for item in scraped_data])
-
-    analyzer = DataAnalyzer()
     analyzed_data = analyzer.analyze_data(parsed_data)
-
-    decision_maker = DecisionMaker()
     decision = decision_maker.make_decision(analyzed_data)
 
-    automator = TradingAutomator()
     automator.automate_trading(decision)
-
-    dashboard_creator = DashboardCreator()
     dashboard_creator.create_dashboard()
-
-    api_integrator = APIIntegrator()
     api_integrator.integrate_with_apis()
-
-    notifications_configurator = NotificationsConfigurator()
     notifications_configurator.configure_notifications()
 
 
 if __name__ == "__main__":
     main()
-```
-
-Changes Made:
-- Added early return in case `soup` is None, to prevent unnecessary code execution.
-- Reordered imports to follow PEP8 guidelines.
-- Moved object instantiations outside the if statement, as they are used regardless of the condition.
-- Cleaned up unnecessary blank lines for better readability.
